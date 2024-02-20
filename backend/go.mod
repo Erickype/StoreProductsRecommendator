@@ -6,6 +6,7 @@ require github.com/gin-gonic/gin v1.9.1
 
 require (
 	dario.cat/mergo v1.0.0 // indirect
+	github.com/Icheka/go-rules-engine v0.0.0-20221102174234-3bc489b3405b // indirect
 	github.com/bep/godartsass v1.2.0 // indirect
 	github.com/bep/godartsass/v2 v2.0.0 // indirect
 	github.com/bep/golibsass v1.1.1 // indirect

@@ -1,8 +1,22 @@
 syntax = "proto3";
 option go_package = "github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories";
 
+//Models
 message Category {
   int64 id = 1 [ json_name = "id" ];
   int64 parent = 2 [ json_name = "parent"];
   string name = 3 [ json_name = "name" ];
+}
+
+// Requests
+message PostRequest{
+  int64 parent = 1 [ json_name = "parent"];
+  string name = 2 [ json_name = "name" ];
+}
+message PostResponse{
+  int64 id = 1 [ json_name = "id" ];
+}
+
+service Categories{
+  rpc PostCategory(PostRequest) returns (PostResponse){}
 }

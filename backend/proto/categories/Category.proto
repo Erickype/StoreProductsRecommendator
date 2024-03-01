@@ -1,0 +1,8 @@
+syntax = "proto3";
+option go_package = "github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories";
+
+message Category {
+  int64 id = 1 [ json_name = "id" ];
+  int64 parent = 2 [ json_name = "parent"];
+  string name = 3 [ json_name = "name" ];
+}

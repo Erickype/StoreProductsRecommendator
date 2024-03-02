@@ -1,8 +1,9 @@
 package internal
 
 import (
-	"fmt"
 	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 	"math/rand/v2"
 )
 
@@ -22,7 +23,7 @@ func (d *DB) AddCategory(parent int64, name string) (int64, error) {
 	id := rand.Int64N(100)
 	for _, o := range d.collection {
 		if o.Id == id {
-			return -1, fmt.Errorf("duplicate category id: %d", id)
+			return -1, status.Errorf(codes.AlreadyExists, "duplicate category id: %d", id)
 		}
 	}
 	d.collection = append(d.collection, &categories.Category{

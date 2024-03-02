@@ -1,5 +1,6 @@
 syntax = "proto3";
 option go_package = "github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories";
+import "google/api/annotations.proto";
 
 //Models
 message Category {
@@ -8,7 +9,7 @@ message Category {
   string name = 3 [ json_name = "name" ];
 }
 
-// Requests
+// Payloads
 message PostRequest{
   int64 parent = 1 [ json_name = "parent"];
   string name = 2 [ json_name = "name" ];
@@ -18,5 +19,10 @@ message PostResponse{
 }
 
 service Categories{
-  rpc PostCategory(PostRequest) returns (PostResponse){}
+  rpc PostCategory(PostRequest) returns (PostResponse){
+    option (google.api.http) = {
+      post: "/v0/categories",
+      body: "*"
+    };
+  }
 }

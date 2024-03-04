@@ -1,8 +1,29 @@
 syntax = "proto3";
+package api.v1;
 option go_package = "github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/products";
+
+import "google/api/annotations.proto";
 
 message Product {
   int64 id = 1 [ json_name = "id" ];
   int64 categoryId = 2 [ json_name = "categoryId"];
   map<string, string> characteristics = 3 [ json_name = "characteristics" ];
+}
+
+// Payloads
+message AddProductRequest{
+  int64 categoryId = 2 [ json_name = "categoryId"];
+  map<string, string> characteristics = 3 [ json_name = "characteristics" ];
+}
+message AddProductReply{
+  int64 id = 1 [ json_name = "id" ];
+}
+
+service Products{
+  rpc AddProduct(AddProductRequest) returns (AddProductReply){
+    option (google.api.http) = {
+      post: "/v0/products"
+      body: "*"
+    };
+  }
 }

@@ -4,6 +4,7 @@ package main
 import (
 	"github.com/Erickype/StoreProductsRecommenderBackend/internal"
 	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
+	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/products"
 	"google.golang.org/grpc"
 	"log"
 	"net"
@@ -23,6 +24,8 @@ func main() {
 	orderService := internal.NewCategoriesService(db)
 	// register the order service with the grpc server
 	categories.RegisterCategoriesServer(server, &orderService)
+	productsService := internal.NewProductsService()
+	products.RegisterProductsServer(server, &productsService)
 	// start listening to requests
 	log.Printf("server listening at %v", listener.Addr())
 	if err = server.Serve(listener); err != nil {

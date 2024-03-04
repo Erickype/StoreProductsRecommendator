@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
+	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/products"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -13,10 +14,10 @@ import (
 
 func main() {
 	// Set up a connection to the order server.
-	orderServiceAddr := "localhost:50051"
-	conn, err := grpc.Dial(orderServiceAddr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	grpcServerAddress := "localhost:50051"
+	conn, err := grpc.Dial(grpcServerAddress, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
-		log.Fatalf("could not connect to order service: %v", err)
+		log.Fatalf("could not connect to GRPC server: %v", err)
 	}
 	defer func(conn *grpc.ClientConn) {
 		err = conn.Close()
@@ -28,7 +29,10 @@ func main() {
 	// Note: Make sure the gRPC server is running properly and accessible
 	mux := runtime.NewServeMux()
 	if err = categories.RegisterCategoriesHandler(context.Background(), mux, conn); err != nil {
-		log.Fatalf("failed to register the order server: %v", err)
+		log.Fatalf("failed to register the Categories server: %v", err)
+	}
+	if err = products.RegisterProductsHandler(context.Background(), mux, conn); err != nil {
+		log.Fatalf("failed to register the Products server: %v", err)
 	}
 	// start listening to requests from the gateway server
 	addr := "0.0.0.0:8080"

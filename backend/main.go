@@ -3,7 +3,8 @@ package main
 import (
 	"github.com/Erickype/StoreProductsRecommenderBackend/gateway"
 	"github.com/Erickype/StoreProductsRecommenderBackend/insecure"
-	"github.com/Erickype/StoreProductsRecommenderBackend/internal"
+	"github.com/Erickype/StoreProductsRecommenderBackend/internal/databases"
+	"github.com/Erickype/StoreProductsRecommenderBackend/internal/services"
 	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
 	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/products"
 	"google.golang.org/grpc"
@@ -28,11 +29,11 @@ func main() {
 		// TODO: Replace with your own certificate!
 		grpc.Creds(credentials.NewServerTLSFromCert(&insecure.Cert)),
 	)
-	db := internal.NewDB()
-	orderService := internal.NewCategoriesService(db)
+	db := databases.NewDB()
+	orderService := services.NewCategoriesService(db)
 	// register the order service with the grpc server
 	categories.RegisterCategoriesServer(server, &orderService)
-	productsService := internal.NewProductsService()
+	productsService := services.NewProductsService()
 	products.RegisterProductsServer(server, &productsService)
 
 	// Serve gRPC Server

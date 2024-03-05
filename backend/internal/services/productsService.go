@@ -1,14 +1,15 @@
-package internal
+package services
 
 import (
 	"context"
+	"github.com/Erickype/StoreProductsRecommenderBackend/internal/databases"
 	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/products"
 	"log"
 	"math/rand/v2"
 )
 
 type ProductsService struct {
-	db *DB
+	db *databases.DB
 	products.UnimplementedProductsServer
 }
 

@@ -1,17 +1,18 @@
-package internal
+package services
 
 import (
 	"context"
+	"github.com/Erickype/StoreProductsRecommenderBackend/internal/databases"
 	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
 	"log"
 )
 
 type CategoriesService struct {
-	db *DB
+	db *databases.DB
 	categories.UnimplementedCategoriesServer
 }
 
-func NewCategoriesService(db *DB) CategoriesService {
+func NewCategoriesService(db *databases.DB) CategoriesService {
 	return CategoriesService{db: db}
 }
 

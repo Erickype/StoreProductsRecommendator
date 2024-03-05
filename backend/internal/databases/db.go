@@ -1,4 +1,4 @@
-package internal
+package databases
 
 import (
 	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
@@ -11,7 +11,7 @@ type DB struct {
 	collection []*categories.Category
 }
 
-// NewDB creates a new array to mimic the behaviour of an in-memory database
+// NewDB creates a new array to mimic the behaviour of an in-memory databases
 func NewDB() *DB {
 	return &DB{
 		collection: make([]*categories.Category, 0),

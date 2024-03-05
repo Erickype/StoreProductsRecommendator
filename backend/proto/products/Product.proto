@@ -22,7 +22,7 @@ message AddProductReply{
 service Products{
   rpc AddProduct(AddProductRequest) returns (AddProductReply){
     option (google.api.http) = {
-      post: "/v0/products"
+      post: "/api/v1/products"
       body: "*"
     };
   }

@@ -1,7 +1,7 @@
 package databases
 
 import (
-	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
+	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/v1/categories"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"math/rand/v2"

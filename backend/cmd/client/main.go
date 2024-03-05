@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
-	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/products"
+	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/v1/categories"
+	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/v1/products"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

@@ -3,7 +3,7 @@ package services
 import (
 	"context"
 	"github.com/Erickype/StoreProductsRecommenderBackend/internal/databases"
-	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
+	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/v1/categories"
 	"log"
 )
 

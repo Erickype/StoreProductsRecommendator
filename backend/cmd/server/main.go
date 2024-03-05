@@ -4,8 +4,8 @@ package main
 import (
 	"github.com/Erickype/StoreProductsRecommenderBackend/internal/databases"
 	"github.com/Erickype/StoreProductsRecommenderBackend/internal/services"
-	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories"
-	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/products"
+	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/v1/categories"
+	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/v1/products"
 	"google.golang.org/grpc"
 	"log"
 	"net"

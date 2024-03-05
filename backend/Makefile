@@ -11,4 +11,4 @@ protoc:
 	--grpc-gateway_out=../protogen/golang --grpc-gateway_opt paths=source_relative \
 	--grpc-gateway_opt generate_unbound_methods=true \
 	-I . --openapiv2_out ../third_party/OpenAPI \
-	./**/*.proto
+	./v1/**/*.proto

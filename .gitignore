@@ -1,3 +1,4 @@
 .idea/
 backend/protogen/
 .cache/
+backend/third_party/OpenAPI/

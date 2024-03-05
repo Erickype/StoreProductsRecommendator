@@ -16,9 +16,9 @@ func NewCategoriesService(db *databases.DB) CategoriesService {
 	return CategoriesService{db: db}
 }
 
-func (c *CategoriesService) PostCategory(_ context.Context,
-	req *categories.PostRequest) (*categories.PostResponse, error) {
+func (c *CategoriesService) AddCategory(_ context.Context,
+	req *categories.AddCategoryRequest) (*categories.AddCategoryReply, error) {
 	log.Printf("Received a PostCategory request")
 	createdId, err := c.db.AddCategory(req.GetParent(), req.GetName())
-	return &categories.PostResponse{Id: createdId}, err
+	return &categories.AddCategoryReply{Id: createdId}, err
 }

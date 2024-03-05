@@ -1,26 +1,38 @@
 syntax = "proto3";
-package api.v1;
-option go_package = "github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/categories";
-import "google/api/annotations.proto";
 
-//Models
+package StoreProductsRecommenderBackend.protogen.golang.v1.categories;
+
+import "google/api/annotations.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option go_package = "github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/v1/categories";
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "Categories service"
+    version: "v1.0.0"
+  }
+  consumes: "application/json"
+  produces: "application/json"
+};
+
 message Category {
   int64 id = 1 [ json_name = "id" ];
   int64 parent = 2 [ json_name = "parent"];
   string name = 3 [ json_name = "name" ];
 }
 
-// Payloads
-message PostRequest{
+// PostRequest
+message AddCategoryRequest{
   int64 parent = 1 [ json_name = "parent"];
   string name = 2 [ json_name = "name" ];
 }
-message PostResponse{
+// PostResponse
+message AddCategoryReply{
   int64 id = 1 [ json_name = "id" ];
 }
 
 service Categories{
-  rpc PostCategory(PostRequest) returns (PostResponse){
+  rpc AddCategory(AddCategoryRequest) returns (AddCategoryReply){
     option (google.api.http) = {
       post: "/api/v1/categories",
       body: "*"

@@ -2,3 +2,4 @@
 backend/protogen/
 .cache/
 backend/third_party/OpenAPI/
+backend/.env

@@ -16,19 +16,19 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
 };
 
 message Category {
-  int64 id = 1 [ json_name = "id" ];
+  string id = 1 [ json_name = "id" ];
   int64 parent = 2 [ json_name = "parent"];
   string name = 3 [ json_name = "name" ];
 }
 
-// PostRequest
+// AddCategoryRequest
 message AddCategoryRequest{
-  int64 parent = 1 [ json_name = "parent"];
+  string parent = 1 [ json_name = "parent"];
   string name = 2 [ json_name = "name" ];
 }
-// PostResponse
+// AddCategoryReply
 message AddCategoryReply{
-  int64 id = 1 [ json_name = "id" ];
+  string id = 1 [ json_name = "id" ];
 }
 
 service Categories{

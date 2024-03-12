@@ -41,7 +41,7 @@ func main() {
 
 func RegisterServices(server *grpc.Server) {
 	categoriesService := services.NewCategoriesService()
-	categories.RegisterCategoriesServer(server, &categoriesService)
+	categories.RegisterCategoriesServer(server, categoriesService)
 
 	productsService := services.NewProductsService()
 	products.RegisterProductsServer(server, &productsService)

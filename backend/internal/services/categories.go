@@ -6,7 +6,6 @@ import (
 	"github.com/Erickype/StoreProductsRecommenderBackend/internal/util"
 	"github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/v1/categories"
 	"google.golang.org/grpc/grpclog"
-	"log"
 )
 
 type CategoriesService struct {
@@ -17,12 +16,24 @@ type CategoriesService struct {
 
 func (c *CategoriesService) AddCategory(context context.Context,
 	req *categories.AddCategoryRequest) (*categories.AddCategoryReply, error) {
-	log.Printf("Received an AddCategory request")
+	c.log.Infoln("Received an AddCategory request")
 	insertedId, err := c.db.AddCategory(context, req)
 	if err != nil {
-		c.log.Fatalln("Error inserting category: %v", err)
+		c.log.Errorf("Error inserting category: %v", err.Error())
+		return nil, err
 	}
 	return &categories.AddCategoryReply{Id: insertedId}, nil
+}
+
+func (c *CategoriesService) GetCategoryById(context context.Context,
+	req *categories.GetCategoryByIdRequest) (*categories.GetCategoryByIdResponse, error) {
+	c.log.Infoln("Received a GetCategoryById request")
+	category, err := c.db.GetCategoryById(context, req)
+	if err != nil {
+		c.log.Errorf("Error getting a category: %v", err.Error())
+		return nil, err
+	}
+	return category, nil
 }
 
 func NewCategoriesService() *CategoriesService {

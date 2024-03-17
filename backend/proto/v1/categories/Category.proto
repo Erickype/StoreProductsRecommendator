@@ -15,9 +15,10 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
   produces: "application/json"
 };
 
+// Category
 message Category {
   string id = 1 [ json_name = "id" ];
-  int64 parent = 2 [ json_name = "parent"];
+  string parent = 2 [ json_name = "parent"];
   string name = 3 [ json_name = "name" ];
 }
 
@@ -31,11 +32,26 @@ message AddCategoryReply{
   string id = 1 [ json_name = "id" ];
 }
 
+// GetCategoryByIdRequest
+message GetCategoryByIdRequest{
+  string id = 1 [ json_name = "id"];
+}
+
+// GetCategoryByIdResponse
+message GetCategoryByIdResponse{
+  Category category = 1;
+}
+
 service Categories{
   rpc AddCategory(AddCategoryRequest) returns (AddCategoryReply){
     option (google.api.http) = {
       post: "/api/v1/categories",
       body: "*"
+    };
+  }
+  rpc GetCategoryById(GetCategoryByIdRequest) returns (GetCategoryByIdResponse){
+    option (google.api.http) = {
+      get: "/api/v1/categories/{id}"
     };
   }
 }

@@ -1,0 +1,137 @@
+{
+  "condition": {
+    "all": [
+      {
+        "identifier": "specie",
+        "operator": "=",
+        "value": "japanese-maple"
+      },
+      {
+        "identifier": "age",
+        "operator": "<=",
+        "value": 5
+      },
+      {
+        "identifier": "style",
+        "operator": "=",
+        "value": "cascade"
+      },
+      {
+        "identifier": "depth",
+        "operator": "<=",
+        "value": 20
+      },
+      {
+        "identifier": "height",
+        "operator": "<=",
+        "value": 30
+      },
+      {
+        "identifier": "width",
+        "operator": "<=",
+        "value": 20
+      }
+    ]
+  },
+  "event": {
+    "type": "recommend",
+    "payload": {
+      "recommendations": [
+        {
+          "category": "soil",
+          "products": [
+            {
+              "name": "draining soil mixture",
+              "characteristics": {
+                "weight(Kg)": 5,
+                "principal-soil": "akadama",
+                "secondary-soil": "organic"
+              },
+              "reason": "Enhance roots aeration"
+            },
+            {
+              "name": "organic fertilizer",
+              "characteristics": {
+                "type": "solid"
+              },
+              "reason": "Slowly dosage"
+            },
+            {
+              "name": "organic fertilizer",
+              "characteristics": {
+                "type": "liquid"
+              },
+              "reason": "Stronger growth for this early stage"
+            },
+            {
+              "name": "perlite",
+              "characteristics": {
+                "weight(kg)": 4
+              },
+              "reason": "Enhance soil structure",
+              "benefits": ["improved aeration", "enhanced drainage"]
+            }
+          ]
+        },
+        {
+          "category": "tools/materials",
+          "products": [
+            {
+              "name": "bonsai training wire",
+              "characteristics": {
+                "material": "copper",
+                "length(m)": 10,
+                "diameter(mm)": 2
+              },
+              "reason": "Training wire is recommended to shape the cascading branches"
+            },
+            {
+              "name": "root brush",
+              "characteristics": {
+                "type": "soft bristles"
+              },
+              "reason": "Gentle cleaning of roots during transplanting"
+            },
+            {
+              "name": "root wire mesh roll",
+              "characteristics": {
+                "material": "metal",
+                "size": "standard"
+              },
+              "reason": "Protect roots during transplanting",
+              "benefits": ["root protection during transplanting", "substrate retention"]
+            }
+          ]
+        },
+        {
+          "category": "pots",
+          "products": [
+            {
+              "name": "bonsai training pot",
+              "characteristics": {
+                "material": "plastic",
+                "shape": "square",
+                "height(cm)": 40,
+                "width(cm)": 30,
+                "depth(cm)": 30
+              },
+              "reason": "Training pot to enhance growth for this stage of the tree"
+            },
+            {
+              "name": "glazed ceramic bonsai pot",
+              "characteristics": {
+                "material": "ceramic",
+                "shape": "square",
+                "height(cm)": 30,
+                "width(cm)": 20,
+                "depth(cm)": 20
+              },
+              "reason": "Provides good drainage and prevents root overheating",
+              "benefits": ["good drainage", "root protection from overheating", "good looking"]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

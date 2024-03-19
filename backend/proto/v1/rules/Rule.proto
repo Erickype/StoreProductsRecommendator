@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package StoreProductsRecommenderBackend.protogen.golang.v1.rules;
+
+option go_package = "github.com/Erickype/StoreProductsRecommenderBackend/protogen/golang/v1/rules";
+
+message Operation{
+  string Identifier = 1;
+  string Operator = 2;
+  string Value = 3;
+}
+message Operations{
+  repeated Operation all = 1;
+}
+
+message ProductRecommendation{
+  string Name = 1;
+  map<string,string> Characteristics = 2;
+  string Reason = 3;
+  repeated string Benefits = 4;
+}
+
+message Recommendation{
+  string Category = 1;
+  repeated ProductRecommendation products = 2;
+}
+
+message Recommendations{
+  repeated Recommendation Recommendations = 1;
+}
+
+message Event{
+  string Type = 1;
+  Recommendations Payload = 2;
+}
+
+message Rule{
+  Operations Condition = 1;
+  Event Event = 2;
+}

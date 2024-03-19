@@ -4,7 +4,7 @@
       {
         "identifier": "specie",
         "operator": "=",
-        "value": "pine"
+        "value": "cherry"
       },
       {
         "identifier": "age",
@@ -57,9 +57,16 @@
             {
               "name": "organic fertilizer",
               "characteristics": {
+                "type": "solid"
+              },
+              "reason": "Once a month during growth period"
+            },
+            {
+              "name": "organic fertilizer",
+              "characteristics": {
                 "type": "liquid"
               },
-              "reason": "Because of growing season, every month for 3 months before decandling"
+              "reason": "Stronger growth for this early stage"
             },
             {
               "name": "perlite",
@@ -81,7 +88,16 @@
                 "length(m)": 10,
                 "diameter(mm)": 2
               },
-              "reason": "Training wire is recommended to shape the cascading branches"
+              "reason": "Training wire is recommended to shape the cascading branches. Used in  for young branches"
+            },
+            {
+              "name": "bonsai guy-wire",
+              "characteristics": {
+                "material": "copper",
+                "length(m)": 10,
+                "diameter(mm)": 4
+              },
+              "reason": "Used for old branches due to its brittle"
             },
             {
               "name": "root brush",

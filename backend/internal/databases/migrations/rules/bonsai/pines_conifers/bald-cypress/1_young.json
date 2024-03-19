@@ -4,7 +4,7 @@
       {
         "identifier": "specie",
         "operator": "=",
-        "value": "pine"
+        "value": "fukien-tea"
       },
       {
         "identifier": "age",
@@ -55,19 +55,26 @@
               "reason": "Enhance roots aeration"
             },
             {
-              "name": "organic fertilizer",
-              "characteristics": {
-                "type": "liquid"
-              },
-              "reason": "Because of growing season, every month for 3 months before decandling"
-            },
-            {
               "name": "perlite",
               "characteristics": {
                 "weight(kg)": 4
               },
               "reason": "Enhance soil structure",
               "benefits": ["improved aeration", "enhanced drainage"]
+            },
+            {
+              "name": "organic fertilizer",
+              "characteristics": {
+                "type": "liquid"
+              },
+              "reason": "From spring to autumn every one or two weeks"
+            },
+            {
+              "name": "organic fertilizer",
+              "characteristics": {
+                "type": "solid"
+              },
+              "reason": "Slowly dosage, during growing season"
             }
           ]
         },
@@ -81,7 +88,16 @@
                 "length(m)": 10,
                 "diameter(mm)": 2
               },
-              "reason": "Training wire is recommended to shape the cascading branches"
+              "reason": "Training wire is recommended to shape the cascading branches, use in thing branches and check regularly to prevent cut into the bark"
+            },
+            {
+              "name": "bonsai training guy-wire",
+              "characteristics": {
+                "material": "copper",
+                "length(m)": 10,
+                "diameter(mm)": 4
+              },
+              "reason": "To use in strong branches to keep shape"
             },
             {
               "name": "root brush",
@@ -109,9 +125,9 @@
               "characteristics": {
                 "material": "plastic",
                 "shape": "square",
-                "height(cm)": 40,
-                "width(cm)": 30,
-                "depth(cm)": 30
+                "height(cm)": 30,
+                "width(cm)": 20,
+                "depth(cm)": 20
               },
               "reason": "Training pot to enhance growth for this stage of the tree"
             },
@@ -120,9 +136,9 @@
               "characteristics": {
                 "material": "ceramic",
                 "shape": "square",
-                "height(cm)": 30,
-                "width(cm)": 20,
-                "depth(cm)": 20
+                "height(cm)": 20,
+                "width(cm)": 15,
+                "depth(cm)": 15
               },
               "reason": "Provides good drainage and prevents root overheating",
               "benefits": ["good drainage", "root protection from overheating", "good looking"]

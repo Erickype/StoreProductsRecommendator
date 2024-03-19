@@ -17,6 +17,11 @@
         "value": "cascade"
       },
       {
+        "identifier": "sex",
+        "operator": "=",
+        "value": "masculine"
+      },
+      {
         "identifier": "depth",
         "operator": "<=",
         "value": 20
